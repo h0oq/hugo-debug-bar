@@ -1,0 +1,12 @@
+name = "hugo-debug-bar"
+license = "MIT"
+licenselink = "https://github.com/h0oq/hugo-debug-bar/blob/master/LICENSE.txt"
+description = "A debug bar for Hugo sites"
+homepage = "https://github.com/h0oq/hugo-debug-bar"
+tags = ["debug", "development", "hugo"]
+features = ["debug-bar"]
+min_version = "0.146.0"
+
+[author]
+  name = "h0oq"
+  homepage = "https://github.com/h0oq"

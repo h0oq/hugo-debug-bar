@@ -1,0 +1,8 @@
+{{- with .Page }}
+<details class="hdb-menu hdb-menu-env">
+   {{- partial "debug-bar/utils/menu-toggle.html" (dict "Label" "Page" "ID" "hdb-page-content") -}}
+   <div class="inner" id="hdb-page-content">
+      {{ partial "debug-bar/utils/debugprint.html" . }}
+   </div>
+</details>
+{{- end }}

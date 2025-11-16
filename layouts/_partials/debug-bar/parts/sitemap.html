@@ -1,0 +1,16 @@
+{{- with .Site.RegularPages }}
+<details class="hdb-menu hdb-menu-sitemap">
+  {{- partial "debug-bar/utils/menu-toggle.html" (dict "Label" "Sitemap" "ID" "hdb-sitemap-content") -}}
+  <div class="inner" id="hdb-sitemap-content">
+      <ul class="hdb-list hdb-menu-site-menu">
+      {{- range . -}}
+        <li class="hdb-menu-site-menu-item">
+          <a class="hdb-menu-site-menu-link" href="{{ .RelPermalink }}" title="{{ .Title }}">
+            {{ .Title }}
+          </a>
+        </li>
+      {{- end -}}
+      </ul>
+   </div>
+</details>
+{{- end }}

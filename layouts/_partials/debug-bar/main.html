@@ -1,0 +1,25 @@
+{{- with resources.Get "css/debug-bar/styles.css" | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin>
+{{- end }}
+
+{{- with resources.Get "css/debug-bar/debugprint.css" | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin>
+{{- end }}
+<div id="hbd" class="hdb" role="toolbar">
+  <div id="hdb-content" class="hdb-content">
+    {{- partial "debug-bar/warning.html" . -}}
+    {{- partial "debug-bar/home-link.html" . -}}
+    <div class="hdb-parts">
+      {{- partial "debug-bar/parts/sitemap.html" . -}}
+      {{- partial "debug-bar/parts/env.html" . -}}
+      {{- partial "debug-bar/parts/site-params.html" . -}}
+      {{- partial "debug-bar/parts/page.html" . -}}
+      {{- partial "debug-bar/parts/page-params.html" . -}}
+      {{- partial "debug-bar/parts/assets/css.html" . -}}
+      {{- partial "debug-bar/parts/assets/js.html" . -}}
+    </div>
+  </div>
+
+  {{- partial "debug-bar/btn-toggle.html" . -}}
+</div>
+{{- partial "debug-bar/scripts.html" . -}}
