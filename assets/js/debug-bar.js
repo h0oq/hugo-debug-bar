@@ -1,72 +1,111 @@
-(() => {
+class DebugBar {
+  constructor({
+    storageKey = 'hugo.debug_bar',
+    toggleId = 'hdb-toggle',
+    barId = 'hdb-content'
+  } = {}) {
+    this.storageKey = storageKey;
+    this.toggle = document.getElementById(toggleId);
+    this.debugBar = document.getElementById(barId);
+    this.detailsList = document.querySelectorAll('details');
 
-  function safeGet(key) {
-    try { return localStorage.getItem(key); } catch { return null; }
-  }
-  function safeSet(key, value) {
-    try { localStorage.setItem(key, value); } catch {}
-  }
+    if (!this.debugBar) return;
 
-  function showBar() {
-    debugBar.style.display = '';
-    debugBar.style.opacity = 1;
-  }
-
-  function hideBar() {
-    debugBar.style.opacity = 0;
-    setTimeout(() => { debugBar.style.display = 'none'; }, 300);
+    this.initialize();
   }
 
-  function getStoredVisibility() {
-    const raw = safeGet(storageKey);
-    if (raw === null) return true;
-    try { return JSON.parse(raw); } catch { return true; }
+  initialize() {
+    const isVisible = this.getStoredVisibility();
+    this.setVisibility(isVisible);
+    this.bindEvents();
   }
 
-  function setStoredVisibility(visible) {
-    safeSet(storageKey, JSON.stringify(visible));
-  }
-
-  function toggleDetails(event) {
-    if (!event.target.open) return;
-    for (const d of detailsList) {
-      let isOpen = d === event.target
-      d.open = isOpen;
-      setAria(d, isOpen);
+  bindEvents() {
+    if (this.toggle) {
+      this.toggle.addEventListener('click', this.handleToggleClick.bind(this));
     }
-  }
 
-  function setAria(btn, visible) {
-    btn.setAttribute('aria-expanded', visible);
-  }
-
-  const storageKey = 'hugo.debug_bar';
-  const detailsList = document.querySelectorAll('details');
-  const toggle = document.getElementById('hdb-toggle');
-  const visible = getStoredVisibility();
-  const debugBar = document.getElementById('hdb-content');
-
-  if (!debugBar) return;
-
-  if (visible) showBar();
-  else hideBar();
-
-  if (toggle) {
-    toggle.addEventListener('click', (e) => {
-      e.preventDefault();
-
-      setAria(toggle, visible);
-      const nowVisible = !getStoredVisibility();
-      setStoredVisibility(nowVisible);
-      if (nowVisible) showBar();
-      else hideBar();
-
-      setAria(toggle, nowVisible);
+    this.detailsList.forEach(details => {
+      details.addEventListener('toggle', this.handleDetailsToggle.bind(this));
     });
   }
 
-  // Close other <details> when one opens
-  for (const d of detailsList) {
-    d.addEventListener('toggle', toggleDetails);
+  safeGet(key) {
+    try {
+      return localStorage.getItem(key);
+    } catch {
+      return null;
+    }
   }
-})();
+
+  safeSet(key, value) {
+    try {
+      localStorage.setItem(key, value);
+    } catch {}
+  }
+
+  getStoredVisibility() {
+    const raw = this.safeGet(this.storageKey);
+    if (raw === null) return true;
+    try {
+      return JSON.parse(raw);
+    } catch {
+      return true;
+    }
+  }
+
+  setStoredVisibility(visible) {
+    this.safeSet(this.storageKey, JSON.stringify(visible));
+  }
+
+  setVisibility(visible) {
+    if (visible) {
+      this.show();
+    } else {
+      this.hide();
+    }
+  }
+
+  show() {
+    this.debugBar.style.display = '';
+    this.debugBar.style.opacity = 1;
+  }
+
+  hide() {
+    this.debugBar.style.opacity = 0;
+    setTimeout(() => {
+      this.debugBar.style.display = 'none';
+    }, 300);
+  }
+
+  setAria(element, isOpen) {
+    if (element) {
+      element.setAttribute('aria-expanded', String(isOpen));
+    }
+  }
+
+  handleToggleClick(event) {
+    event.preventDefault();
+    const nowVisible = !this.getStoredVisibility();
+    this.setStoredVisibility(nowVisible);
+    this.setVisibility(nowVisible);
+    this.setAria(this.toggle, nowVisible);
+  }
+
+  handleDetailsToggle(event) {
+    const current = event.target;
+    if (!current.open) {
+      this.setAria(current.querySelector('summary'), false);
+      return;
+    }
+
+    this.detailsList.forEach(details => {
+      const isOpen = details === current;
+      details.open = isOpen;
+      this.setAria(details.querySelector('summary'), isOpen);
+    });
+  }
+}
+
+// Initialize automatically
+document.addEventListener('DOMContentLoaded', () => new DebugBar());
