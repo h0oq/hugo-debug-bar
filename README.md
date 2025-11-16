@@ -34,8 +34,6 @@ If you don't want the debug bar at the top at the page, you should be able to pu
     position = "bottom" # either "bottom" or "top" (default position is "top")
 ```
 
-However, you'll have to style it from scratch.
-
 ## Hugo modules
 
 This part can be tricky, and it depends on your current usage.
