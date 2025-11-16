@@ -5,6 +5,12 @@
 ![screenshot of debug bar open](/screen-open-min.png)
 ![screenshot of debug bar closed](/screen-close-min.png)
 
+## Why?
+
+There are a few existing resources for similar features.
+
+I made this debug bar for fun and to explore Hugo a bit more, and save some time when I need to print site params and other common data.
+
 ## Implementation
 
 Add the following code to your module list in the `hugo.toml` file:
@@ -17,6 +23,18 @@ Add the following code to your module list in the `hugo.toml` file:
   [module.imports]
     path = "github.com/h0oq/hugo-debug-bar"
 ```
+
+## Position
+
+If you don't want the debug bar at the top at the page, you should be able to push it to the bottom with that param:
+
+```toml
+[params]
+  [params.HDB]
+    position = "bottom" # either "bottom" or "top" (default position is "top")
+```
+
+However, you'll have to style it from scratch.
 
 ## Hugo modules
 
@@ -54,7 +72,7 @@ hugo mod graph
 hugo mod get -u github.com/h0oq/hugo-debug-bar
 ```
 
-### Use it as a Partial
+### Display the debug bar
 
 Don't forget to open your `layouts/baseof.html` and add the following wherever you like (within `<body></body>`): 
 
