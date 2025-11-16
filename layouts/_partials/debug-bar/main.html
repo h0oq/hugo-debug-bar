@@ -1,6 +1,13 @@
 {{- with resources.Get "css/debug-bar/styles.css" | minify | fingerprint }}
   <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin>
 {{- end }}
+{{- with $.Site.Params.HDB.position }}
+  {{- if eq $.Site.Params.HDB.position "bottom" }}
+    {{- with resources.Get "css/debug-bar/bottom.css" | minify | fingerprint }}
+      <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin>
+    {{- end }}
+  {{- end }}
+{{- end }}
 
 {{- with resources.Get "css/debug-bar/debugprint.css" | minify | fingerprint }}
   <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin>

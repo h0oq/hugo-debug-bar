@@ -1,0 +1,26 @@
+.hdb-content {
+  top: unset;
+  bottom: 0;
+}
+
+.hdb-content {
+  padding-left: 24px;
+}
+
+#hdb-toggle {
+  top: unset;
+  bottom: 0;
+}
+
+.hdb-menu .inner {
+  top: unset;
+  bottom: 32px;
+}
+
+.hdb-menu .inner {
+  padding: 20px;
+  padding-bottom: 10px;
+  border-radius: 5px 5px 0 0;
+  border: 1px solid var(--hdb-border-color);
+  border-block-end: none;
+}
