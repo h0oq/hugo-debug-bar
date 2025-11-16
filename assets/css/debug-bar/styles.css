@@ -85,6 +85,9 @@
   cursor: pointer;
   text-transform: capitalize;
 }
+.hdb-menu summary::marker {
+  content: "";
+}
 .hdb a {
   color: var(--hdb-color);
   font-family: var(--hbd-font-family);

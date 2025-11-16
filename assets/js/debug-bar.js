@@ -27,17 +27,21 @@
     safeSet(storageKey, JSON.stringify(visible));
   }
 
+  // Close other <details> when one opens
+  // Set aria-expanded on summary when toggling
   function toggleDetails(event) {
-    if (!event.target.open) return;
+    if (!event.target.open) {
+      setAria(event.target.querySelector('summary'), false);
+      return;
+    }
     for (const d of detailsList) {
-      let isOpen = d === event.target
-      d.open = isOpen;
-      setAria(d, isOpen);
+      d.open = d === event.target;
+      setAria(d.querySelector('summary'), d.open);
     }
   }
 
-  function setAria(btn, visible) {
-    btn.setAttribute('aria-expanded', visible);
+  function setAria(btn, isOpen) {
+    btn.setAttribute('aria-expanded', isOpen);
   }
 
   const storageKey = 'hugo.debug_bar';
@@ -58,6 +62,7 @@
       setAria(toggle, visible);
       const nowVisible = !getStoredVisibility();
       setStoredVisibility(nowVisible);
+      
       if (nowVisible) showBar();
       else hideBar();
 
@@ -65,7 +70,6 @@
     });
   }
 
-  // Close other <details> when one opens
   for (const d of detailsList) {
     d.addEventListener('toggle', toggleDetails);
   }
