@@ -4,7 +4,7 @@ debug_bar:
     label: "Toggle debug bar"
     title: "Toggle debug bar"
   env:
-    label: "Env"
+    label: "Environment"
     name: "Name"
     hugo:
       version: "Version"
