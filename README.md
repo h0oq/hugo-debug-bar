@@ -2,8 +2,8 @@
 
 ## Screenshots
 
-![screenshot of debug bar open](/screen-opened-min.png)
-![screenshot of debug bar closed](/screen-closed-min.png)
+![screenshot of debug bar open](/screen-op.png)
+![screenshot of debug bar closed](/screen-clo.png)
 
 ## Why?
 
