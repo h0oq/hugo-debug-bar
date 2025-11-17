@@ -42,6 +42,7 @@ If you don't want the debug bar at the top at the page, you should be able to pu
   --hdb-color: #c0c0c0;
   --hdb-color-hover: #fafafa;
   --hdb-color-value: #00fcff;
+  --hdb-color-current-menu: #67ff00;
   --hdb-border-color: #282828;
   --hdb-color-bool-true: #5fff00;
   --hdb-color-bool-false: #ffd200;
