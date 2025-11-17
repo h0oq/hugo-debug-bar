@@ -1,0 +1,8 @@
+debug_bar:
+  home: "Home"
+  toggle:
+    label: "Toggle debug bar"
+    title: "Toggle debug bar"
+  sha: "sha"
+  buildDate: "Build on"
+  warning: "Please use a larger screen to debug (>1024px)."

@@ -2,7 +2,7 @@
   <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin>
 {{- end }}
 {{- with $.Site.Params.HDB.position }}
-  {{- if eq $.Site.Params.HDB.position "bottom" }}
+  {{- if eq . "bottom" }}
     {{- with resources.Get "css/debug-bar/bottom.css" | minify | fingerprint }}
       <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin>
     {{- end }}
