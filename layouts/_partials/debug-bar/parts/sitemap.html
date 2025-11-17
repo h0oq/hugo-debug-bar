@@ -1,6 +1,7 @@
 {{- with .Site.RegularPages }}
 <details class="hdb-menu hdb-menu-sitemap">
-  {{- partial "debug-bar/utils/menu-toggle.html" (dict "Label" "Sitemap" "ID" "hdb-sitemap-content") -}}
+  {{- $label := i18n "debug_bar.sitemap.label" -}}
+  {{- partial "debug-bar/utils/menu-toggle.html" (dict "Label" $label "ID" "hdb-sitemap-content") -}}
   <div class="inner" id="hdb-sitemap-content">
       <ul class="hdb-list hdb-menu-site-menu">
       {{- range . -}}

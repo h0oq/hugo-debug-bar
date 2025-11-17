@@ -4,9 +4,21 @@ debug_bar:
     label: "Toggle debug bar"
     title: "Toggle debug bar"
   env:
+    label: "Environment"
     name: "Name"
     hugo:
       version: "Version"
       buildDate: "Last Build on"
       sha: "Commit sha"
+  page:
+    label: "Page"
+  sitemap:
+    label: "Sitemap"
+  site_params:
+    label: "Site Params"
+  page_params:
+    label: "Page Params"
+  assets:
+    css_js:
+      label: "CSS & JS"
   warning: "Please use a larger screen to debug (>1024px)."

@@ -3,11 +3,6 @@
   bottom: 0;
 }
 
-.hdb-content {
-  border-block-end: 0;
-  border-block-start: 1px solid var(--hdb-border-color);
-}
-
 #hdb-toggle {
   top: unset;
   bottom: 0;
@@ -16,9 +11,4 @@
 .hdb-menu .inner {
   top: unset;
   bottom: 32px;
-}
-
-.hdb-menu .inner {
-  border: 1px solid var(--hdb-border-color);
-  border-block-end: none;
 }
