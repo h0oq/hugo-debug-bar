@@ -1,9 +1,8 @@
 # Hugo Debug Bar
 
-## Screenshots
+## Demo
 
-![screenshot of debug bar open](/screen-op.png)
-![screenshot of debug bar closed](/screen-clo.png)
+[See example](https://h0oq.github.io/hugo-debug-bar-demo/)
 
 ## Why?
 

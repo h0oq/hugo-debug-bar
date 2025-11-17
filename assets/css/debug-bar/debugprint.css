@@ -22,10 +22,6 @@
     padding: 5px 10px;
 }
 
-.debugprint .key {
-    font-weight: bold;
-}
-
 .debugprint .type {
     font-size: 1em;
     font-family: monospace;
@@ -52,7 +48,6 @@
 .debugprint th.key,
 .debugprint th.type,
 .debugprint th.value {
-    font-family: helvetica, arial, san-serif;
     text-transform: uppercase;
     letter-spacing: 1px;
     font-size: 1em;

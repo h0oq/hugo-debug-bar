@@ -1,8 +1,0 @@
-{{- with resources.Match "**/*.css" }}
-<details class="hdb-menu hdb-menu-env">
-   {{- partial "debug-bar/utils/menu-toggle.html" (dict "Label" "Assets CSS" "ID" "hdb-assets-css-content") -}}
-   <div class="inner" id="hdb-assets-css-content">
-      {{ partial "debug-bar/utils/debugprint.html" . }}
-   </div>
-</details>
-{{- end }}
