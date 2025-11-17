@@ -1,7 +1,7 @@
 .hdb {
   --hdb-bg-color: #0f0a0a;
-  --hdb-bg-color-inner: rgba(15,10,10, 79%);/*#0f0a0ac9;*/
-  --hbd-font-family: system-ui, -apple-system, Roboto, sans-serif;
+  --hdb-bg-color-inner: rgba(15,10,10, 90%);
+  --hbd-font-family: helvetica, arial, san-serif;
   --hdb-color: #c0c0c0;
   --hdb-color-hover: #fafafa;
   --hdb-color-value: #00fcff;
@@ -10,7 +10,7 @@
   --hdb-color-bool-true: #5fff00;
   --hdb-color-bool-false: #ffd200;
   --hdb-border-color-table: #ddd;
-  --hdb-font-size: 14px;
+  --hdb-font-size: 13px;
   --hdb-icon-size: 24px;
 }
 .hdb .hdb-btn,
@@ -31,7 +31,6 @@
   font-size: var(--hdb-font-size);
   background: var(--hdb-bg-color);
   border: 0;
-  border-block-end: 1px solid var(--hdb-border-color);
   color: var(--hdb-color);
   font-family: var(--hbd-font-family);
   position: fixed;
@@ -39,11 +38,9 @@
   top: 0;
   left: 0;
   right: 0;
-  gap: 30px;
+  gap: 15px;
   padding-inline: 60px;
-  min-height: 32px;
-  max-height: 32px;
-  font-size: smaller;
+  padding-block: 7px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -65,7 +62,7 @@
   position: fixed;
   left: 0;
   top: 0;
-  padding: 5px!important;
+  padding: 8px!important;
   z-index: 99999;
   background-color: var(--hdb-bg-color)!important;
   color: var(--hdb-color)!important;
@@ -105,7 +102,7 @@
   font-size: var(--hdb-font-size);
 }
 .hdb-parts {
-  gap: 40px;
+  gap: 30px;
   display: flex;
   align-items: center;
   flex: 1;
@@ -114,8 +111,6 @@
   font-family: var(--hbd-font-family);
   position: fixed;
   z-index: 100;
-  border: 1px solid var(--hdb-border-color);
-  border-block-start: none;
   background: var(--hdb-bg-color-inner);
   top: 32px;
   left: 0;
@@ -123,6 +118,7 @@
   display: flex;
   flex-direction: column;
   padding-inline-start: 32px;
+  padding-block: 20px;
   width: 100vw;
   height: 50vh;
   overflow-x: hidden;
@@ -139,7 +135,6 @@
 .hdb-menu-site-menu-link {
   font-family: var(--hbd-font-family);
   font-size: var(--hdb-font-size);
-  font-weight: 300;
   color: var(--hdb-color);
 }
 .hdb-menu-site-menu-link:hover {

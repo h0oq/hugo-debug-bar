@@ -1,0 +1,12 @@
+<details class="hdb-menu hdb-menu-env">
+   {{- $label := i18n "debug_bar.assets.css_js.label" -}}
+   {{- partial "debug-bar/utils/menu-toggle.html" (dict "Label" $label "ID" "hdb-css-js-content") -}}
+   <div class="inner" id="hdb-css-js-content">
+      {{- with resources.Match "**/*.css" }}
+         {{ partial "debug-bar/utils/debugprint.html" . }}
+      {{- end }}
+      {{- with resources.Match "**/*.js" }}
+         {{ partial "debug-bar/utils/debugprint.html" . }}
+      {{- end }}
+   </div>
+</details>
