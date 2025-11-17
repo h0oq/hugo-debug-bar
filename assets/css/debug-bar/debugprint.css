@@ -1,24 +1,25 @@
 .debugprint_wrap {
+    font-size: 1em;
     width: stretch;
-    padding: 20px;
     display: inline-block;
     margin: 10px auto;
     border-radius: 5px;
-    border: 2px solid #ddd;
 }
 
 .debugprint td, .debugprint th {
+    text-align: start;
     padding-left: 4px;
     padding-right: 4px;
 }
 
 .debugprint th {
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid var(--hdb-border-color-table);
     padding-bottom: 10px;
     margin-bottom: 10px;
 }
 
 .debugprint tr {
+    text-align: start;
     padding: 5px 10px;
 }
 
@@ -27,7 +28,7 @@
 }
 
 .debugprint .type {
-    font-size: 0.9em;
+    font-size: 1em;
     font-family: monospace;
     font-style: italic;
 }
@@ -36,12 +37,17 @@
     font-family: monospace;
 }
 
+
+.debugprint td.value {
+    color: var(--hdb-color-value);
+}
+
 .debugprint .true {
-    color: green;
+    color: var(--hdb-color-bool-true);
 }
 
 .debugprint .false {
-    color: red;
+    color: var(--hdb-color-bool-false);
 }
 
 .debugprint th.key,
