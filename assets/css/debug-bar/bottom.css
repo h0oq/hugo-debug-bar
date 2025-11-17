@@ -6,7 +6,6 @@
 .hdb-content {
   border-block-end: 0;
   border-block-start: 1px solid var(--hdb-border-color);
-  padding-left: 24px;
 }
 
 #hdb-toggle {
@@ -20,9 +19,6 @@
 }
 
 .hdb-menu .inner {
-  padding: 20px;
-  padding-bottom: 10px;
-  border-radius: 5px 5px 0 0;
   border: 1px solid var(--hdb-border-color);
   border-block-end: none;
 }
