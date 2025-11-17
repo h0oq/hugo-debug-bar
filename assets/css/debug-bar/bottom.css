@@ -4,6 +4,8 @@
 }
 
 .hdb-content {
+  border-block-end: 0;
+  border-block-start: 1px solid var(--hdb-border-color);
   padding-left: 24px;
 }
 

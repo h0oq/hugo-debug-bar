@@ -1,9 +1,13 @@
 .hdb {
-  --hdb-bg-color: black;
+  --hdb-bg-color: #0f0a0a;
   --hbd-font-family: system-ui, -apple-system, Roboto, sans-serif;
   --hdb-color: #c0c0c0;
   --hdb-color-hover: #fafafa;
+  --hdb-color-value: #00fcff;
   --hdb-border-color: #282828;
+  --hdb-color-bool-true: #5fff00;
+  --hdb-color-bool-false: #ffd200;
+  --hdb-border-color-table: #ddd;
   --hdb-font-size: 14px;
   --hdb-icon-size: 24px;
 }
@@ -107,7 +111,6 @@
   border-block-start: none;
   border-radius: 0 0 5px 5px;
   background: var(--hdb-bg-color);
-  padding: 20px;
   padding-top: 10px;
   top: 32px;
   gap: 10px;

@@ -1,4 +1,4 @@
 <!-- Persistent corner toggle (small pill) -->
-<button id="hdb-toggle" class="hdb-btn hdb-toggle-pill" aria-label="Toggle debug bar" title="Toggle debug bar" aria-expanded="true" aria-controls="hdb-content">
+<button id="hdb-toggle" class="hdb-btn hdb-toggle-pill" aria-label="{{ i18n "debug_bar.toggle.label" | safeHTMLAttr }}" title="{{ i18n "debug_bar.toggle.title" | safeHTMLAttr }}" aria-expanded="true" aria-controls="hdb-content">
   {{- partial "debug-bar/utils/svg.html" "toggle" }}
 </button>

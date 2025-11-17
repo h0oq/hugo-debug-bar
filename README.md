@@ -34,6 +34,19 @@ If you don't want the debug bar at the top at the page, you should be able to pu
     position = "bottom" # either "bottom" or "top" (default position is "top")
 ```
 
+## Colors
+
+```CSS
+  --hdb-bg-color: #0f0a0a;
+  --hdb-color: #c0c0c0;
+  --hdb-color-hover: #fafafa;
+  --hdb-color-value: #00fcff;
+  --hdb-border-color: #282828;
+  --hdb-color-bool-true: #5fff00;
+  --hdb-color-bool-false: #ffd200;
+  --hdb-border-color-table: #ddd;
+```
+
 ## Hugo modules
 
 This part can be tricky, and it depends on your current usage.
