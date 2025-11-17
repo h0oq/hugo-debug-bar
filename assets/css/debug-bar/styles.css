@@ -1,9 +1,11 @@
 .hdb {
   --hdb-bg-color: #0f0a0a;
+  --hdb-bg-color-inner: rgba(15,10,10, 79%);/*#0f0a0ac9;*/
   --hbd-font-family: system-ui, -apple-system, Roboto, sans-serif;
   --hdb-color: #c0c0c0;
   --hdb-color-hover: #fafafa;
   --hdb-color-value: #00fcff;
+  --hdb-color-current-menu: #67ff00;
   --hdb-border-color: #282828;
   --hdb-color-bool-true: #5fff00;
   --hdb-color-bool-false: #ffd200;
@@ -38,7 +40,7 @@
   left: 0;
   right: 0;
   gap: 30px;
-  padding-inline: 15px;
+  padding-inline: 60px;
   min-height: 32px;
   max-height: 32px;
   font-size: smaller;
@@ -54,18 +56,19 @@
 .hdb summary {
   font-family: var(--hbd-font-family);
   font-size: var(--hdb-font-size);
+  font-weight: 300;
 }
 #hdb-toggle {
   display: flex;
   font-family: var(--hbd-font-family)!important;
   appearance: none!important;
   position: fixed;
-  right: 0;
+  left: 0;
   top: 0;
-  padding: 3px!important;
+  padding: 5px!important;
   z-index: 99999;
   background-color: var(--hdb-bg-color)!important;
-  color: var(--hdb-color-hover)!important;
+  color: var(--hdb-color)!important;
   opacity: 0.8;
   cursor: pointer;
   text-shadow: none;
@@ -92,13 +95,17 @@
 .hdb-menu summary::marker {
   content: "";
 }
+#hdb-toggle:hover,
+.hdb-menu[open] summary {
+  color: var(--hdb-color-current-menu)!important;
+}
 .hdb a {
   color: var(--hdb-color);
   font-family: var(--hbd-font-family);
   font-size: var(--hdb-font-size);
 }
 .hdb-parts {
-  gap: 30px;
+  gap: 40px;
   display: flex;
   align-items: center;
   flex: 1;
@@ -109,16 +116,20 @@
   z-index: 100;
   border: 1px solid var(--hdb-border-color);
   border-block-start: none;
-  border-radius: 0 0 5px 5px;
-  background: var(--hdb-bg-color);
-  padding-top: 10px;
+  background: var(--hdb-bg-color-inner);
   top: 32px;
+  left: 0;
   gap: 10px;
   display: flex;
   flex-direction: column;
-  max-height: 90vh;
+  padding-inline-start: 32px;
+  width: 100vw;
+  height: 50vh;
   overflow-x: hidden;
   overflow-y: auto;
+}
+.hdb-menu .inner > * {
+  margin: 20px;
 }
 .hdb-menu-site-menu {
   display: flex;
@@ -139,6 +150,9 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+.hdb-menu-env ul ul {
+  margin-inline-start: 25px;
 }
 .hdb-menu-env pre {
   overflow: auto;

@@ -2,8 +2,8 @@
 
 ## Screenshots
 
-![screenshot of debug bar open](/screen-open-min.png)
-![screenshot of debug bar closed](/screen-close-min.png)
+![screenshot of debug bar open](/screen-opened-min.png)
+![screenshot of debug bar closed](/screen-closed-min.png)
 
 ## Why?
 
@@ -38,9 +38,11 @@ If you don't want the debug bar at the top at the page, you should be able to pu
 
 ```CSS
   --hdb-bg-color: #0f0a0a;
+  --hdb-bg-color-inner: rgba(15,10,10, 79%);/*#0f0a0ac9;*/
   --hdb-color: #c0c0c0;
   --hdb-color-hover: #fafafa;
   --hdb-color-value: #00fcff;
+  --hdb-color-current-menu: #67ff00;
   --hdb-border-color: #282828;
   --hdb-color-bool-true: #5fff00;
   --hdb-color-bool-false: #ffd200;

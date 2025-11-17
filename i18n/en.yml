@@ -3,6 +3,10 @@ debug_bar:
   toggle:
     label: "Toggle debug bar"
     title: "Toggle debug bar"
-  sha: "sha"
-  buildDate: "Build on"
+  env:
+    name: "Name"
+    hugo:
+      version: "Version"
+      buildDate: "Last Build on"
+      sha: "Commit sha"
   warning: "Please use a larger screen to debug (>1024px)."

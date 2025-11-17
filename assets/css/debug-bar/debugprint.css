@@ -1,8 +1,7 @@
 .debugprint_wrap {
     font-size: 1em;
-    width: stretch;
     display: inline-block;
-    margin: 10px auto;
+    margin-inline: auto;
     border-radius: 5px;
 }
 
