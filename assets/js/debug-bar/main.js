@@ -2,7 +2,7 @@ class DebugBar {
   constructor({
     storageKey = 'hugo.debug_bar',
     toggleId = 'hdb-toggle',
-    barId = 'hdb-content'
+    barId = 'hdb'
   } = {}) {
     this.storageKey = storageKey;
     this.toggle = document.getElementById(toggleId);
@@ -67,6 +67,7 @@ class DebugBar {
   }
 
   show() {
+    const computed = getComputedStyle(this.debugBar);
     this.debugBar.style.display = '';
     this.debugBar.style.opacity = 1;
   }

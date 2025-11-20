@@ -1,7 +1,7 @@
 class DebugBarSettings {
   constructor({
     storageKey = 'hugo.debug_bar_settings',
-    barId = 'hdb-content'
+    barId = 'hdb'
   } = {}) {
     this.storageKey = storageKey;
     this.debugBar = document.getElementById(barId);

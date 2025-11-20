@@ -12,8 +12,9 @@
 {{- with resources.Get "css/debug-bar/debugprint.css" | minify | fingerprint }}
   <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin>
 {{- end }}
-<div id="hdb" class="hdb hdb-flex" role="toolbar">
-  {{- partial "debug-bar/buttons/bar-toggle.html" . -}}
+  
+{{- partial "debug-bar/buttons/bar-toggle.html" . -}}
+<div id="hdb" class="hdb" role="toolbar">
   <div id="hdb-content" class="hdb-content hdb-flex">
     <p class="hdb-warning hdb-warning-screen-size" hidden>{{ i18n "debug_bar.warning.size" | safeHTML }}</p>
     <div class="hdb-parts hdb-flex">
@@ -25,7 +26,6 @@
 
     {{- partial "debug-bar/settings.html" . -}}
   </div>
-
 </div>
 
 {{ $js := resources.Get "js/debug-bar/main.js" | minify | fingerprint }}

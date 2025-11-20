@@ -46,6 +46,7 @@ If you don't want the debug bar at the top at the page, you should be able to pu
 ## Colors
 
 ```CSS
+.hdb {
   --hdb-bg-color: #0f0a0a;
   --hdb-bg-color-inner: #0f0a0a;
   --hdb-color: #c0c0c0;
@@ -56,6 +57,7 @@ If you don't want the debug bar at the top at the page, you should be able to pu
   --hdb-color-print-bool-true: #5fff00;
   --hdb-color-print-bool-false: #ffd200;
   --hdb-border-color-table: #ddd;
+}
 ```
 
 ## V4 settings
