@@ -30,5 +30,5 @@
 
 {{ $js := resources.Get "js/debug-bar/main.js" | minify | fingerprint }}
 <script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" defer></script>
-{{ $js := resources.Get "js/debug-bar/settings.js" | fingerprint }}
+{{ $js := resources.Get "js/debug-bar/settings.js" | minify | fingerprint }}
 <script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" defer></script>
