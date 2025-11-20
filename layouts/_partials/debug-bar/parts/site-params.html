@@ -1,8 +1,0 @@
-{{- with .Site.Params  }}
-<details class="hdb-menu hdb-menu-env">
-   {{- partial "debug-bar/utils/menu-toggle.html" (dict "Label" "Site Params" "ID" "hdb-site-params-content") -}}
-   <div class="inner" id="hdb-site-params-content">
-      {{ partial "debug-bar/utils/debugprint.html" . }}
-   </div>
-</details>
-{{- end }}

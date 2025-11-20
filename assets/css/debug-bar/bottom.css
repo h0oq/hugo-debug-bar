@@ -3,22 +3,13 @@
   bottom: 0;
 }
 
-.hdb-content {
-  border-block-end: 0;
-  border-block-start: 1px solid var(--hdb-border-color);
-}
-
 #hdb-toggle {
   top: unset;
-  bottom: 0;
+  bottom: var(--hdb-offset);
 }
 
-.hdb-menu .inner {
+.hdb-menu-inner {
   top: unset;
-  bottom: 32px;
-}
-
-.hdb-menu .inner {
-  border: 1px solid var(--hdb-border-color);
-  border-block-end: none;
+  padding-block-start: 50px;
+  bottom: var(--hdb-bar-size);
 }

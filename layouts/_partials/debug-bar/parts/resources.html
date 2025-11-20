@@ -1,0 +1,16 @@
+<details class="hdb-menu hdb-menu-env">
+   {{- $label := i18n "debug_bar.parts.resources.label" -}}
+   {{- partial "debug-bar/buttons/menu-toggle.html" (dict "Label" $label "ID" "hdb-resources-content") -}}
+   <div class="hdb-menu-inner" id="hdb-resources-content">
+      <p class="hdb-title">{{ $label }}</p>
+      <p class="hdb-desc">{{ i18n "debug_bar.parts.resources.desc" }}</p>
+      <div class="hdb-flex">
+         {{- with resources.Match "**/*.css" }}
+            {{ partial "debug-bar/utils/debugprint.html" . }}
+         {{- end }}
+         {{- with resources.Match "**/*.js" }}
+            {{ partial "debug-bar/utils/debugprint.html" . }}
+         {{- end }}
+      </div>
+   </div>
+</details>

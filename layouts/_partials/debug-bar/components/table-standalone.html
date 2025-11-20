@@ -1,0 +1,24 @@
+{{- $th := .th -}}
+{{- $rows := .rows -}}
+<div class="debugprint_wrap">
+  <table class="debugprint standalone">
+    <tbody>
+      {{ with $th }}
+      <tr>
+        {{ range $key, $value := $th }}
+          <th class="key">{{ $key }}</th>
+          <th class="value">{{ $value }}</th>
+        {{- end }}
+      </tr>
+      {{- end }}
+      {{ with $rows }}
+        {{ range $key,$value := . }}
+        <tr>
+            <td class="key">{{ $key }}</td>
+            <td class="value">{{ $value }}</td>
+        </tr>
+        {{- end }}
+      {{- end }}
+    </tbody>
+  </table>
+</div>

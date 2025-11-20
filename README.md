@@ -8,7 +8,17 @@
 
 There are a few existing resources for similar features.
 
-I made this debug bar for fun and to explore Hugo a bit more, and save some time when I need to print site params and other common data.
+I made this debug bar to build some UI, and save some time when I need to print Hugo params and other common data.
+
+## Warning
+
+Hugo has built-in commands for dev that work great. This tool can't replace them, and it can't get updated data in real-time, for example, the statistics are only updated when you rebuild/restart the server.
+
+Keep that in mind, if you want to try it.
+
+One possible approach would consist of using poll intervals to make Hugo dynamic, but it's not implemented in this module.
+
+In the meantime, you may leverage the `--templateMetrics` flag.
 
 ## Implementation
 
@@ -37,16 +47,26 @@ If you don't want the debug bar at the top at the page, you should be able to pu
 
 ```CSS
   --hdb-bg-color: #0f0a0a;
-  --hdb-bg-color-inner: rgba(15,10,10, 79%);/*#0f0a0ac9;*/
+  --hdb-bg-color-inner: #0f0a0a;
   --hdb-color: #c0c0c0;
   --hdb-color-hover: #fafafa;
-  --hdb-color-value: #00fcff;
+  --hdb-color-print-value: #00fcff;
   --hdb-color-current-menu: #67ff00;
   --hdb-border-color: #282828;
-  --hdb-color-bool-true: #5fff00;
-  --hdb-color-bool-false: #ffd200;
+  --hdb-color-print-bool-true: #5fff00;
+  --hdb-color-print-bool-false: #ffd200;
   --hdb-border-color-table: #ddd;
 ```
+
+## V4 settings
+
+I made a new tab, with fun settings, like background color and color.
+
+Basically, it allows tweaking all CSS vars for colors.
+
+This is quite experimental, but it should work.
+
+A better approach would limit the picker to specific ranges of colors, but it's not implemented yet.
 
 ## Hugo modules
 

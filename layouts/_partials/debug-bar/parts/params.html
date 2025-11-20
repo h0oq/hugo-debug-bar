@@ -1,0 +1,22 @@
+<details class="hdb-menu hdb-menu-env">
+   {{- $label := i18n "debug_bar.parts.params.label" -}}
+   {{- partial "debug-bar/buttons/menu-toggle.html" (dict "Label" $label "ID" "hdb-params-content") -}}
+   <div class="hdb-menu-inner" id="hdb-params-content">
+      <p class="hdb-title">{{ i18n "debug_bar.parts.params.label" }}</p>
+      <p class="hdb-desc">{{ i18n "debug_bar.parts.params.desc" }}</p>
+      <div class="hdb-flex">
+      {{- with $.Site.Params  }}
+         <div class="hdb-subsection">
+            <p class="hdb-subtitle">{{ i18n "debug_bar.parts.site.label" }}</p>
+            {{ partial "debug-bar/utils/debugprint.html" . }}
+         </div>
+      {{- end }}
+      {{- with .Page.Params  }}
+          <div class="hdb-subsection">
+            <p class="hdb-subtitle">{{ i18n "debug_bar.parts.page.label" }}</p>
+            {{ partial "debug-bar/utils/debugprint.html" . }}
+         </div>
+      {{- end }}
+      </div>
+   </div>
+</details>
