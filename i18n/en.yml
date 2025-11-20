@@ -3,22 +3,67 @@ debug_bar:
   toggle:
     label: "Toggle debug bar"
     title: "Toggle debug bar"
-  env:
-    label: "Environment"
-    name: "Name"
-    hugo:
-      version: "Version"
-      buildDate: "Last Build on"
-      sha: "Commit sha"
-  page:
-    label: "Page"
-  sitemap:
-    label: "Sitemap"
-  site_params:
-    label: "Site Params"
-  page_params:
-    label: "Page Params"
-  assets:
-    css_js:
-      label: "CSS & JS"
-  warning: "Please use a larger screen to debug (>1024px)."
+  settings:
+    label: "Debug bar settings"
+    title: "Debug bar settings"
+    desc: "Here you can tweaks a few styles for debug bar:"
+    reset:
+      label: "Reset"
+    bar:
+      color:
+        label: "Color foreground"
+      bgColor:
+        label: "Color background"
+      bgColorInner:
+        label: "Color background inner panel"
+      colorHover:
+        label: "Color hover links"
+      colorCurrentMenu:
+        label: "Color current menu open"
+      colorPrintValue:
+        label: "Color debugprint values"
+      colorPrintBoolTrue:
+        label: "Color debugprint boolean true"
+      colorPrintBoolFalse:
+        label: "Color debugprint boolean false"
+      borderColor:
+        label: "Border color"
+      borderColorTable:
+        label: "Border color debugprint & table"
+  site:
+    label: "Site"
+  parts:
+    env:
+      label: "Env / Stats"
+      stats:
+        column_total: "Total"
+        column_name: "Item"
+        items:
+          allPages: "All pages"
+          regularPages: "Regular pages"
+          taxonomies: "Taxonomies"
+          menus: "Menus"
+          terms: "Terms"
+          resources: 
+            all: "Resources"
+            images: "Processed images"
+            js: "Scripts"
+            css: "CSS"
+      name: "Name"
+      hugo:
+        version: "Version"
+        buildDate: "Last Build on"
+        sha: "Commit sha"
+      server:
+        lastbuild: "Server last build in"
+    page:
+      label: "Current Page"
+      desc: "Useful page data (e.g., title, pagination, status):"
+    params:
+      label: "Params"
+      desc: "Useful for additional fields in front matter:"
+    resources:
+      label: "Resources"
+      desc: "Resources you can find in the project (only CSS and JS, for now):"
+  warning: 
+    size: "Please use a larger screen to debug (>1024px)."

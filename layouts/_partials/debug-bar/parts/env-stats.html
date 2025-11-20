@@ -1,0 +1,45 @@
+<details class="hdb-menu hdb-menu-env">
+   {{- $label := i18n "debug_bar.parts.env.label" -}}
+   {{- partial "debug-bar/buttons/menu-toggle.html" (dict "Label" $label "ID" "hdb-env-stats-content") -}}
+   <div class="hdb-menu-inner" id="hdb-env-stats-content">
+      <p class="hdb-title">{{ $label }}</p>
+      <ul class="hdb-list">
+         <li>{{ i18n "debug_bar.parts.env.name" | safeHTML }}: {{ $.Site.Hugo.Environment }}</li>
+         {{- with $.Site.Hugo.Version -}}
+            <li>Hugo:
+               <ul>
+         {{- with $.Site.Hugo.GoVersion -}}
+            <li>{{ i18n "debug_bar.parts.env.hugo.version" | safeHTML }} {{ . }}</li>
+         {{- end }}
+
+         {{- with $.Site.Hugo.BuildDate -}}
+            <li>{{ i18n "debug_bar.parts.env.hugo.buildDate" | safeHTML }} {{ . }}</li>
+         {{- end }}
+
+         {{- with $.Site.Hugo.CommitHash -}}
+            <li>{{ i18n "debug_bar.parts.env.hugo.sha" | safeHTML }} {{ . }}</li>
+         {{- end }}
+         </ul></li>{{- end }}
+      </ul>
+             
+       {{- $th := dict (i18n "debug_bar.parts.env.stats.column_name") (i18n "debug_bar.parts.env.stats.column_total") -}}
+     
+       {{- $nb_terms := 0 -}}
+       {{- range $taxo, $terms := $.Site.Taxonomies -}}
+         {{- $nb_terms = add $nb_terms (len $terms) -}}
+       {{- end -}}
+
+       {{- $processed := resources.Match "images/**" -}}
+
+       {{- $rows := dict 
+         (i18n "debug_bar.parts.env.stats.items.allPages") (len .Site.AllPages)
+         (i18n "debug_bar.parts.env.stats.items.regularPages") (len .Site.RegularPages)
+         (i18n "debug_bar.parts.env.stats.items.menus") (len .Site.Menus)
+         (i18n "debug_bar.parts.env.stats.items.taxonomies") (len .Site.Taxonomies)
+         (i18n "debug_bar.parts.env.stats.items.terms") $nb_terms
+         (i18n "debug_bar.parts.env.stats.items.resources.all" ) (len .Resources)
+         (i18n "debug_bar.parts.env.stats.items.resources.images") (len $processed)
+       -}}
+       {{- partial "debug-bar/components/table-standalone.html" (dict "th" $th "rows" $rows) -}}
+   </div>
+</details>

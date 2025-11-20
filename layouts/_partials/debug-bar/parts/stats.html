@@ -1,9 +1,0 @@
-{{- with .Site.RegularPages }}
-<details class="hdb-menu hdb-menu-stats">
-  {{- $label := i18n "debug_bar.stats.label" -}}
-  {{- partial "debug-bar/utils/menu-toggle.html" (dict "Label" $label "ID" "hdb-stats-content") -}}
-  <div class="inner" id="hdb-stats-content">
-
-   </div>
-</details>
-{{- end }}

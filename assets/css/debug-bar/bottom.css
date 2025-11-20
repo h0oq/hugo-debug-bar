@@ -5,10 +5,11 @@
 
 #hdb-toggle {
   top: unset;
-  bottom: 0;
+  bottom: var(--hdb-offset);
 }
 
-.hdb-menu .inner {
+.hdb-menu-inner {
   top: unset;
-  bottom: 32px;
+  padding-block-start: 50px;
+  bottom: var(--hdb-bar-size);
 }

@@ -1,0 +1,38 @@
+<details class="hdb-menu hdb-settings">
+   {{- $label := i18n "debug_bar.settings.label" -}}
+   {{- partial "debug-bar/buttons/settings.html" (dict "Label" $label "ID" "hdb-settings-content") -}}
+   <div class="hdb-menu-inner" id="hdb-settings-content">
+      <p class="hdb-title">{{ i18n "debug_bar.settings.label" }}</p>
+      <p class="hdb-desc">{{ i18n "debug_bar.settings.desc" }}</p>
+
+      <form id="hdb-settings-form" action="{{ $.RelPermalink }}" class="hdb-settings-form">
+         <div class="hdb-flex hdb-settings-form-columns">
+            <div class="hdb-settings-form-column">
+               {{- $labelBgColorBar := i18n "debug_bar.settings.bar.bgColor.label" -}}
+               <p class="hdb-flex">{{- partial "debug-bar/components/color-settings.html" (dict "label" $labelBgColorBar "ID" "hdb-bg-color" "value" "#0f0a0a") -}}</p>
+               {{- $labelBgColorInner := i18n "debug_bar.settings.bar.bgColorInner.label" -}}
+               <p class="hdb-flex">{{- partial "debug-bar/components/color-settings.html" (dict "label" $labelBgColorInner "ID" "hdb-bg-color-inner" "value" "#0f0a0a") -}}</p>
+               {{- $labelColorBar := i18n "debug_bar.settings.bar.color.label" -}}
+               <p class="hdb-flex">{{- partial "debug-bar/components/color-settings.html" (dict "label" $labelColorBar "ID" "hdb-color" "value" "#c0c0c0") -}}</p>
+               {{- $labelColorHover := i18n "debug_bar.settings.bar.colorHover.label" -}}
+               <p class="hdb-flex">{{- partial "debug-bar/components/color-settings.html" (dict "label" $labelColorHover "ID" "hdb-color-hover" "value" "#fafafa") -}}</p>
+               {{- $labelColorCurrentMenu := i18n "debug_bar.settings.bar.colorCurrentMenu.label" -}}
+               <p class="hdb-flex">{{- partial "debug-bar/components/color-settings.html" (dict "label" $labelColorCurrentMenu "ID" "hdb-color-current-menu" "value" "#67ff00") -}}</p>
+            </div>
+            <div class="hdb-settings-form-column">       
+               {{- $labelColorPrintValue := i18n "debug_bar.settings.bar.colorPrintValue.label" -}}
+               <p class="hdb-flex">{{- partial "debug-bar/components/color-settings.html" (dict "label" $labelColorPrintValue "ID" "hdb-color-print-value" "value" "#00fcff") -}}</p>
+               {{- $labelPrintBoolTrue := i18n "debug_bar.settings.bar.colorPrintBoolTrue.label" -}}
+               <p class="hdb-flex">{{- partial "debug-bar/components/color-settings.html" (dict "label" $labelPrintBoolTrue "ID" "hdb-color-print-bool-true" "value" "#5fff00") -}}</p>
+               {{- $labelPrintBoolFalse := i18n "debug_bar.settings.bar.colorPrintBoolFalse.label" -}}
+               <p class="hdb-flex">{{- partial "debug-bar/components/color-settings.html" (dict "label" $labelPrintBoolFalse "ID" "hdb-color-print-bool-false" "value" "#ffd200") -}}</p>
+               {{- $labelBorderColor := i18n "debug_bar.settings.bar.borderColor.label" -}}
+               <p class="hdb-flex">{{- partial "debug-bar/components/color-settings.html" (dict "label" $labelBorderColor "ID" "hdb-border-color" "value" "#282828") -}}</p>
+               {{- $labelBorderColorTable := i18n "debug_bar.settings.bar.borderColorTable.label" -}}
+               <p class="hdb-flex">{{- partial "debug-bar/components/color-settings.html" (dict "label" $labelBorderColorTable "ID" "hdb-border-color-table" "value" "#ddd") -}}</p>
+            </div>
+         </div>
+         <p>{{- partial "debug-bar/buttons/settings-reset.html" . -}}</p>
+      </form>
+   </div>
+</details>

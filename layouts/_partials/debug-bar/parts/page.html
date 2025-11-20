@@ -1,8 +1,10 @@
 {{- with .Page }}
 <details class="hdb-menu hdb-menu-env">
-   {{- $label := i18n "debug_bar.page_params.label" -}}
-   {{- partial "debug-bar/utils/menu-toggle.html" (dict "Label" $label "ID" "hdb-page-content") -}}
-   <div class="inner" id="hdb-page-content">
+   {{- $label := i18n "debug_bar.parts.page.label" -}}
+   {{- partial "debug-bar/buttons/menu-toggle.html" (dict "Label" $label "ID" "hdb-page-content") -}}
+   <div class="hdb-menu-inner" id="hdb-page-content">
+      <p class="hdb-title">{{ i18n "debug_bar.parts.params.label" }}</p>
+      <p class="hdb-desc">{{ i18n "debug_bar.parts.page.desc" }}</p>
       {{ partial "debug-bar/utils/debugprint.html" . }}
    </div>
 </details>
