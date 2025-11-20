@@ -24,7 +24,6 @@
   background: var(--hdb-bg-color);
   color: var(--hdb-color);
   width: stretch;
-  height: var(--hdb-bar-size);
 }
 .hdb-flex {
   align-items: center;
